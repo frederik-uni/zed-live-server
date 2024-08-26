@@ -1,0 +1,17 @@
+id = "live-server"
+name = "LiveServer"
+version = "0.3.0"
+schema_version = 1
+authors = ["frederik <termite_pilgrim04@icloud.com>"]
+description = "Launch a development local Server with live reload feature"
+repository = "https://github.com/frederik-uni/zed-live-server"
+
+[language_servers.live-server]
+name = "live-server"
+language = "HTML"
+languages = ["HTML", "JavaScript", "CSS"]
+
+[language_servers.live-server.language_ids]
+"HTML" = "html"
+"JavaScript" = "javascript"
+"CSS" = "css"
