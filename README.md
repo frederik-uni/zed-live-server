@@ -26,3 +26,10 @@ This extension adds my live server to zed
     start_port: number
 }
 ```
+### Using Zed Live Server
+
+Shortcut: g + .
+
+  Go to your HTML file.
+  Use a secondary click (for me, it’s a two-finger push; for you, it might be a right-click).
+  Click on Code Action.
