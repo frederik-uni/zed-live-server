@@ -28,7 +28,7 @@ This extension adds my live server to zed
 ```
 ### Using Zed Live Server
 
-Shortcut: g + .
+Shortcut: ⌘ + .
 
   Go to your HTML file.
   Use a secondary click (for me, it’s a two-finger push; for you, it might be a right-click).
