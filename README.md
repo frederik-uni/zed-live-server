@@ -9,7 +9,7 @@ This extension adds my live server to zed
 - its always running
 - i dont know how to use commands(opening the browser) in zed/ maybe not possible yet
 - the codeaction opens in browser & shows which port it is running on
-  
+
 ### How it works
 - server: file change/save => sends update info over websocket
 - css updates style tag, everything else reloads the page
@@ -30,6 +30,6 @@ This extension adds my live server to zed
 
 Shortcut: ⌘ + .
 
-  Go to your HTML file.
-  Use a secondary click (for me, it’s a two-finger push; for you, it might be a right-click).
-  Click on Code Action.
+Go to your HTML file.
+Use a secondary click (for me, it’s a two-finger push; for you, it might be a right-click).
+Click on Code Action.
