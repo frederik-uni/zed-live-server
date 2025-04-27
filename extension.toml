@@ -1,6 +1,6 @@
 id = "live-server"
 name = "LiveServer"
-version = "0.3.0"
+version = "0.3.1"
 schema_version = 1
 authors = ["frederik <termite_pilgrim04@icloud.com>"]
 description = "Launch a development local Server with live reload feature"
