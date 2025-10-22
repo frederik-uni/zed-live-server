@@ -9,7 +9,6 @@ struct LiveServerExtension {
 }
 
 impl LiveServerExtension {
-    
     fn language_server_binary_path(
         &mut self,
         language_server_id: &LanguageServerId,
@@ -113,6 +112,62 @@ impl zed::Extension for LiveServerExtension {
             args: vec!["--eager".to_string()], //"--public", "--port", "1234"
             env: Default::default(),
         })
+    }
+
+    fn run_slash_command(
+        &self,
+        command: SlashCommand,
+        _args: Vec<String>,
+        _worktree: Option<&Worktree>,
+    ) -> Result<SlashCommandOutput, String> {
+        match command.name.as_str() {
+            "live-server-start" => {
+                let output_text = "🚀 Starting Live Server...\n\nTo check status, use /live-server-status\nTo stop the server, use /live-server-stop";
+
+                Ok(SlashCommandOutput {
+                    sections: vec![SlashCommandOutputSection {
+                        range: (0..output_text.len()).into(),
+                        label: "Live Server - Start".to_string(),
+                    }],
+                    text: output_text.to_string(),
+                })
+            }
+            "live-server-stop" => {
+                let output_text = "⏹️  Stopping Live Server...\n\nThe Live Server has been stopped.\nTo start again, use /live-server-start";
+
+                Ok(SlashCommandOutput {
+                    sections: vec![SlashCommandOutputSection {
+                        range: (0..output_text.len()).into(),
+                        label: "Live Server - Start".to_string(),
+                    }],
+                    text: output_text.to_string(),
+                })
+            }
+            "live-server-status" => {
+                let output_text = "🌐 Opening Live Server in browser...\n\n🔗 URL: http://127.0.0.1:57391\n\nIf the browser doesn't open automatically, copy the URL above and paste it in your browser.";
+
+                Ok(SlashCommandOutput {
+                    sections: vec![SlashCommandOutputSection {
+                        range: (9..output_text.len()).into(),
+                        label: "Live Server - Open Browser".to_string(),
+                    }],
+                    text: output_text.to_string(),
+                })
+            }
+            
+            "live-server-open" => {
+                let output_text: &'static str = "🌐 Opening Live Server in browser...\n\n🔗 URL: http://127.0.0.1:57391\n\nIf the browser doesn't open automatically, copy the URL above and paste it in your browser.";
+                
+                Ok(SlashCommandOutput {
+                    sections: vec![SlashCommandOutputSection{
+                        range: (0..output_text.len()).into(),
+                        label: "Live Server - Open Browser".to_string(),
+                    }],
+                    text: output_text.to_string(),
+                })
+            }
+            _ => Err(format!("Unknown slash command: {}", command.name)),
+        }
     }
 }
 
