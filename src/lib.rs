@@ -1,12 +1,15 @@
 use std::fs;
 use zed::LanguageServerId;
-use zed_extension_api::{self as zed, Result};
+use zed_extension_api::{
+    self as zed, Result, SlashCommand, SlashCommandOutput, SlashCommandOutputSection, Worktree,
+};
 
 struct LiveServerExtension {
     cached_binary_path: Option<String>,
 }
 
 impl LiveServerExtension {
+    
     fn language_server_binary_path(
         &mut self,
         language_server_id: &LanguageServerId,

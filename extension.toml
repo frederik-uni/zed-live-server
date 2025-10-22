@@ -15,3 +15,19 @@ languages = ["HTML", "JavaScript", "CSS"]
 "HTML" = "html"
 "JavaScript" = "javascript"
 "CSS" = "css"
+
+[slash_commands.live-server-start]
+description: "Start service for the current project"
+requires_argument = false
+
+[slash_commands.live-server-stop]
+description: "Stop service for the current project"
+requires_argument = false
+
+[slash_commands.live-server-status]
+description: "Get the status of the service for the current project"
+requires_argument = false
+
+[slash_commands.live-server-open]
+description: "Open the current project in the browser"
+requires_argument = false
